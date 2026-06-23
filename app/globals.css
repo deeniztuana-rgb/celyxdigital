@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #050507;
+  --surface: #0b0b0f;
+  --accent: #ccff00; /* neon lime accent */
+  --accent-ink: #0a0c00; /* readable dark text on neon */
+}
+
+html {
+  background: var(--ink);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hide native cursor only on fine-pointer devices that allow motion,
+   so the custom cursor takes over without breaking touch / reduced-motion. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html,
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+/* Global reduced-motion safety net */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Subtle grain/vignette helpers */
+.bg-radial-faint {
+  background: radial-gradient(
+    60% 60% at 50% 40%,
+    rgba(204, 255, 0, 0.08),
+    transparent 70%
+  );
+}
+
+/* Hero headline sizing (kept within the 55fr column) */
+.hero-headline {
+  font-size: clamp(70px, 11vw, 140px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: clamp(44px, 12vw, 88px);
+  }
+}
+
+/* Thin, faint Playfair outline line ("WE BRING") */
+.headline-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 640px) {
+  .headline-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Solid stroke-only headline variants */
+.text-stroke-black {
+  color: transparent;
+  -webkit-text-stroke: 2px #050507;
+}
+.text-stroke-white-2 {
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+}
+@media (max-width: 640px) {
+  .text-stroke-black {
+    -webkit-text-stroke: 1.5px #050507;
+  }
+  .text-stroke-white-2 {
+    -webkit-text-stroke: 1.5px #ffffff;
+  }
+}
+
+/* Infinite horizontal marquee */
+@keyframes marqueeX {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marqueeX 30s linear infinite;
+}
+.marquee-wrap:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* 3D flip cards */
+.flip-card {
+  perspective: 1200px;
+}
+.flip-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.flip-card:hover .flip-inner,
+.flip-card:focus-within .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  .flip-inner {
+    transition: none;
+  }
+  .flip-card:hover .flip-inner,
+  .flip-card:focus-within .flip-inner {
+    transform: none;
+  }
+}
+
+/* Masked reveal line wrapper */
+.reveal-line {
+  display: block;
+  overflow: hidden;
+}
