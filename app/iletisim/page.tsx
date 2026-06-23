@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Instagram, Globe, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MessageCircle, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "İletişim",
@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 };
 
 const CHANNELS = [
-  { icon: Mail, label: "E-posta", value: "hello@celyx.digital", href: "mailto:hello@celyx.digital" },
-  { icon: Instagram, label: "Instagram", value: "@pehlivannagroup", href: "https://www.instagram.com/pehlivannagroup" },
-  { icon: Globe, label: "Web", value: "pehlivannagroup.com", href: "https://pehlivannagroup.com/" },
+  { icon: Mail, label: "E-posta", value: "celyxdigital@gmail.com", href: "mailto:celyxdigital@gmail.com" },
+  { icon: Phone, label: "Telefon", value: "0540 100 40 62", href: "tel:+905401004062" },
+  { icon: MessageCircle, label: "WhatsApp", value: "0540 100 40 62", href: "https://wa.me/905401004062" },
 ];
 
 export default function Page() {
@@ -59,15 +59,24 @@ export default function Page() {
           })}
         </div>
 
-        <div className="mt-12">
+        <div className="mt-12 flex flex-wrap items-center gap-4">
           <a
-            href="mailto:hello@celyx.digital"
+            href="mailto:celyxdigital@gmail.com"
             data-cursor="hover"
-            className="inline-flex min-h-[52px] items-center gap-2 rounded-full px-8 text-sm font-semibold uppercase tracking-wide text-ink transition-transform hover:scale-[1.03]"
-            style={{ background: "#CCFF00" }}
+            className="inline-flex min-h-[52px] items-center gap-2.5 rounded-2xl bg-blue-600 px-8 text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-blue-600/25 transition-transform hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
           >
+            <Mail className="h-5 w-5" aria-hidden />
             E-posta Gönder
-            <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </a>
+          <a
+            href="https://wa.me/905401004062"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="hover"
+            className="inline-flex min-h-[52px] items-center gap-2.5 rounded-2xl bg-green-500 px-8 text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-green-500/25 transition-transform hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+          >
+            <MessageCircle className="h-5 w-5" aria-hidden />
+            WhatsApp&apos;tan Yaz
           </a>
         </div>
       </div>

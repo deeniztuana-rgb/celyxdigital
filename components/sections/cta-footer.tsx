@@ -155,9 +155,9 @@ export function CtaFooter() {
         <FooterCol
           title="İletişim"
           links={[
-            { label: "hello@celyx.digital", href: "mailto:hello@celyx.digital" },
-            { label: "Instagram", href: "https://www.instagram.com/pehlivannagroup" },
-            { label: "Pehlivanna Group", href: "https://pehlivannagroup.com/" },
+            { label: "celyxdigital@gmail.com", href: "mailto:celyxdigital@gmail.com" },
+            { label: "0540 100 40 62", href: "tel:+905401004062" },
+            { label: "WhatsApp", href: "https://wa.me/905401004062" },
           ]}
         />
       </div>
