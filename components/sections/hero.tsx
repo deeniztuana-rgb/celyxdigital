@@ -56,17 +56,17 @@ export function Hero() {
             {...line(0.1)}
             className="block font-playfair italic headline-outline"
           >
-            We Bring
+            Rakiplerinizin
           </m.span>
           <m.span
             {...line(0.3)}
             className="block font-sans"
             style={{ color: "#CCFF00" }}
           >
-            Growth.
+            Önüne Geçin.
           </m.span>
           <m.span {...line(0.5)} className="block font-sans text-white">
-            To Brands.
+            Fark Yaratın.
           </m.span>
         </h1>
 
