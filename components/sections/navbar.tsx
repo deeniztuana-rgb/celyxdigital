@@ -38,13 +38,11 @@ export function Navbar() {
         <Link
           href="/"
           data-cursor="hover"
-          className="flex items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           aria-label="Celyx Digital — ana sayfa"
         >
-          <span className="inline-block h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_16px_4px_rgba(204,255,0,0.6)]" />
-          <span className="font-display text-lg font-semibold tracking-tight text-white">
-            Celyx<span className="text-white/50">Digital</span>
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Celyx Digital" className="h-9 w-auto" />
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">

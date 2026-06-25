@@ -119,15 +119,10 @@ export function CtaFooter() {
       {/* Footer columns */}
       <div className="mx-auto grid max-w-container gap-10 px-5 py-16 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span
-              className="h-2.5 w-2.5 rounded-full"
-              style={{ background: "#CCFF00", boxShadow: "0 0 16px 4px rgba(204,255,0,0.6)" }}
-            />
-            <span className="font-display text-lg font-semibold text-white">
-              Celyx<span className="text-white/50">Digital</span>
-            </span>
-          </div>
+          <Link href="/" className="inline-flex" aria-label="Celyx Digital — ana sayfa">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Celyx Digital" className="h-10 w-auto" />
+          </Link>
           <p className="mt-4 max-w-xs text-sm text-white/50">
             AI-first dijital büyüme stüdyosu.
           </p>
