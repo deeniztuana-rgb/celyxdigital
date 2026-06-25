@@ -160,9 +160,9 @@ export function CtaFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-container flex-col items-center justify-between gap-3 px-5 py-6 text-sm text-white/40 sm:flex-row sm:px-8">
           <p>© 2025 Celyx Digital. Tüm hakları saklıdır.</p>
-          <a href="#" className="transition-colors hover:text-white/70">
-Gizlilik Politikası
-          </a>
+          <Link href="/gizlilik-politikasi" className="transition-colors hover:text-white/70">
+            Gizlilik Politikası
+          </Link>
         </div>
       </div>
     </footer>
